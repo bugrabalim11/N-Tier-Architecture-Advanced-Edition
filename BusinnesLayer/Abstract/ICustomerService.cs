@@ -3,9 +3,9 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace DataAccessLayer.Abstract
+namespace BusinnesLayer.Abstract
 {
-    public interface ICustomerDal : IGenericDal<Customer>
+    public interface ICustomerService : IGenericService<Customer>
     {
     }
 }
