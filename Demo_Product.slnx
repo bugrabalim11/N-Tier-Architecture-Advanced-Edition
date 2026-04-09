@@ -1,0 +1,6 @@
+<Solution>
+  <Project Path="BusinnesLayer/BusinnesLayer.csproj" />
+  <Project Path="DataAccessLayer/DataAccessLayer.csproj" />
+  <Project Path="Demo_Product/Demo_Product.csproj" />
+  <Project Path="EntityLayer/EntityLayer.csproj" />
+</Solution>
