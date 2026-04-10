@@ -11,10 +11,6 @@ namespace BusinnesLayer.Concrete
     {
         IProductDal? _productDal;
 
-        public ProductManager()
-        {
-        }
-
         public ProductManager(IProductDal? productDal) // Constructor metot
         {
             _productDal = productDal;

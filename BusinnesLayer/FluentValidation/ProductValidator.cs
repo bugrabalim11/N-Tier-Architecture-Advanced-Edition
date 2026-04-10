@@ -6,9 +6,9 @@ using System.Text;
 
 namespace BusinnesLayer.FluentValidation
 {
-    public class ProductVallidator : AbstractValidator<Product>
+    public class ProductValidator : AbstractValidator<Product>
     {
-        public ProductVallidator()
+        public ProductValidator()
         {
             RuleFor(x => x.ProductName).NotEmpty().WithMessage("Ürün adını doldurunuz!");
             RuleFor(x=>x.ProductName).MinimumLength(3).WithMessage("Ürün adı en az 3 karakter olmalıdır!");

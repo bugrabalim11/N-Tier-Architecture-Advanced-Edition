@@ -1,7 +1,16 @@
+using BusinnesLayer.FluentValidation;
+using FluentValidation;
+using FluentValidation.AspNetCore;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+// Yeni Modern Kayıt Şekli:
+builder.Services.AddFluentValidationClientsideAdapters();
+builder.Services.AddValidatorsFromAssemblyContaining<ProductValidator>();
+
 
 var app = builder.Build();
 
