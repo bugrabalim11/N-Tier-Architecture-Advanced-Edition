@@ -9,5 +9,9 @@ namespace EntityLayer.Concrete
         public int CustomerId { get; set; }
         public string CustomerName { get; set; } = string.Empty;
         public string CustomerCity { get; set; } = string.Empty;
+
+        // İlişki: Bir müşteri bir işe sahip olabilir
+        public int JobId { get; set; }
+        public Job Job { get; set; }
     }
 }

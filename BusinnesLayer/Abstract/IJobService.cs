@@ -5,8 +5,7 @@ using System.Text;
 
 namespace BusinnesLayer.Abstract
 {
-    public interface ICustomerService : IGenericService<Customer>
+    public interface IJobService : IGenericService<Job>
     {
-        List<Customer> GetCustomersListWithJob();
     }
 }
