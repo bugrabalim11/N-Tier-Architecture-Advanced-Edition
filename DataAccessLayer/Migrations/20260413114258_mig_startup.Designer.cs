@@ -11,8 +11,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DataAccessLayer.Migrations
 {
     [DbContext(typeof(Context))]
-    [Migration("20260412142900_mig_fix_job_relation")]
-    partial class mig_fix_job_relation
+    [Migration("20260413114258_mig_startup")]
+    partial class mig_startup
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
