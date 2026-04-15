@@ -4,6 +4,8 @@ using Demo_Product.Models;
 using EntityLayer.Concrete;
 using FluentValidation;
 using FluentValidation.AspNetCore;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc.Authorization;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -13,6 +15,19 @@ builder.Services.AddIdentity<AppUser, AppRole>().AddEntityFrameworkStores<Contex
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+builder.Services.AddMvc(config =>
+{
+    var policy=new AuthorizationPolicyBuilder()
+    .RequireAuthenticatedUser()
+    .Build();
+    config.Filters.Add(new AuthorizeFilter(policy));
+});
+
+builder.Services.ConfigureApplicationCookie(options =>
+{
+    options.LoginPath = "/Login/Index/";
+});
 
 // Yeni Modern Kayıt Şekli (Senin eklediğin kısım):
 builder.Services.AddFluentValidationClientsideAdapters();
@@ -32,7 +47,7 @@ app.UseHttpsRedirection();
 app.UseRouting();
 
 // Identity kullandığımız için Authentication (Kimlik Doğrulama) da genelde buraya eklenir. 
-// app.UseAuthentication(); // İleride hoca bunu eklemeni isteyecek, şimdilik yorum satırında kalsın.
+app.UseAuthentication(); // İleride hoca bunu eklemeni isteyecek, şimdilik yorum satırında kalsın.
 
 app.UseAuthorization();
 app.MapStaticAssets();
