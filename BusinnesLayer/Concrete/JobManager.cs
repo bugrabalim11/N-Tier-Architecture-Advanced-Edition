@@ -7,7 +7,7 @@ using System.Text;
 
 namespace BusinnesLayer.Concrete
 {
-    public class JobManager : IJobService
+    public class JobManager : IGenericService<Job>
     {
         IJobDal _jobDal;
 

@@ -7,7 +7,7 @@ using System.Text;
 
 namespace BusinnesLayer.Concrete
 {
-    public class CustomerManager : ICustomerService
+    public class CustomerManager : IGenericService<Customer>
     {
         ICustomerDal _customerDal;
 

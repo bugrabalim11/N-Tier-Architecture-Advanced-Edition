@@ -7,7 +7,7 @@ using System.Text;
 
 namespace BusinnesLayer.Concrete
 {
-    public class CategoryManager : ICategoryService
+    public class CategoryManager : IGenericService<Category>
     {
         ICategoryDal _categoryDal;
 

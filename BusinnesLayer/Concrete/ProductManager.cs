@@ -7,7 +7,7 @@ using System.Text;
 
 namespace BusinnesLayer.Concrete
 {
-    public class ProductManager : IProductService
+    public class ProductManager : IGenericService<Product>
     {
         IProductDal? _productDal;
 
